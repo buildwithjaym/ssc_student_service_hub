@@ -182,7 +182,7 @@
     (function () {
       const SURVEY_URL = "https://forms.gle/P2RpEqnSgt345ADi8";
       const KEY = "basc_survey_prompt_v1";
-      const DELAY_MS = 20000;
+      const DELAY_MS = 10000;
 
       function shouldPrompt() {
         try { return !localStorage.getItem(KEY); } catch { return true; }
