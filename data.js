@@ -23,7 +23,7 @@ window.HUB_DATA = {
         { label: "ID / Lost ID", query: "id" }
     ],
     officers: {
-        partylist: "Student’s Union Partylist",
+        partylist: "Students' Union Partylist",
         president: { name: "Owen Mac A. Salain", unit: "CHUSOCOM" },
         vicePresident: { name: "John Paul Labastilla", unit: "CTE" },
         senators: [
@@ -36,6 +36,7 @@ window.HUB_DATA = {
             { name: "Nursaira S. Abdo", unit: "CTE" },
             { name: "Jayvie M. Eugenio", unit: "CCJE" },
             { name: "James Ryan H. Reyes", unit: "CPAdm" },
+            { name: "Beverly Jane Francisco", unit: "IHTM" },
             { name: "Nhawaf S. Jingkatal", unit: "CHUSOCOM" }
         ],
         representatives: [
@@ -54,10 +55,10 @@ window.HUB_DATA = {
     offices: [
         {
             id: "mis",
-            name: "MIS Office (Portal / Student Account)",
-            location: "Administration Building — (edit exact location)",
-            hours: "Mon–Fri, 8:00 AM–5:00 PM (edit if needed)",
-            contact: "Email/FB/Phone (optional)",
+            name: "MIS Office",
+            location: "Same building with the Clinic",
+            hours: "Mon–Fri, 8:00 AM–5:00 PM ",
+            contact: "Facebook: Basilan State College ICT Unit",
             keywords: ["portal", "account", "mis", "student portal", "login", "reset password", "open portal"]
         },
         {
@@ -101,9 +102,17 @@ window.HUB_DATA = {
             keywords: ["library", "clearance", "borrow", "research"]
         },
         {
+            id: "scholarship",
+            name: "Scholarship Office",
+            location: "Near the Assessment Office",
+            hours: "Mon–Fri, 8:00 AM–5:00 PM",
+            contact: "",
+            keywords: ["scholarship", "financial aid", "grant", "funding"]
+        },
+        {
             id: "admin",
             name: "Administration Building",
-            location: "Admin Building — Campus (reference office building)",
+            location: "Admin Building — Main Campus besides SSC office ",
             hours: "Mon–Fri, 8:00 AM–5:00 PM",
             contact: "",
             keywords: ["mis", "osas", "cashier", "admin", "offices"]
@@ -136,6 +145,64 @@ window.HUB_DATA = {
             notes: [
                 "Bring your student number and correct spelling of your name to avoid issues.",
                 "If the portal requires an official link, ask MIS to write it down for you."
+            ]
+        },
+
+        // ===== Scholarships =====
+        {
+            id: "scholarship-apply",
+            title: "Apply for Scholarship (New Applicant)",
+            officeId: "scholarships",
+            category: "Scholarships",
+            keywords: ["scholarship", "apply scholarship", "financial assistance", "grant", "apply", "requirements"],
+            fees: "None (usually)",
+            eta: "Varies per application window",
+            requirements: [
+                "Completed scholarship application form",
+                "Certified True Copy of grades (as required)",
+                "Certificate of Enrollment / Registration Form",
+                "Good Moral Certificate (if required)",
+                "Photocopy of valid ID",
+                "COR, COE and Prospectus"
+            ],
+            steps: [
+                "Go to the Scholarship/Financial Assistance Office and ask for the current scholarship list and application form.",
+                "Confirm eligibility and deadline for the scholarship you want to apply for.",
+                "Complete the form and prepare all required documents.",
+                "Submit the application and request a receiving copy/stamp if available.",
+                "Wait for screening results and follow the office instructions for interview/verification (if required)."
+            ],
+            notes: [
+                "Requirements vary by scholarship provider—always confirm the exact checklist with the office.",
+                "Submit early to avoid delays during peak days."
+            ]
+        },
+        //Scholarship Renewal
+        {
+            id: "scholarship-renew",
+            title: "Scholarship Renewal (Continuing Scholar)",
+            officeId: "scholarships",
+            category: "Scholarships",
+            keywords: ["scholarship renewal", "renew scholarship", "continuing scholar", "renew", "grades", "compliance"],
+            fees: "None (usually)",
+            eta: "Varies per semester schedule",
+            requirements: [
+                "Renewal form (from Scholarship Office)",
+                "Certified grades / Copy of grades (as required)",
+                "Certificate of Enrollment / Registration Form",
+                "Scholarship contract/compliance documents (if required)",
+                "Other requirements based on scholarship rules (edit this)"
+            ],
+            steps: [
+                "Visit the Scholarship Office and request the renewal requirements and deadline for this term.",
+                "Prepare your grades and proof of enrollment documents.",
+                "Fill out the renewal form completely.",
+                "Submit all requirements and confirm if any follow-up steps are needed.",
+                "Keep a copy/photo of your submitted documents for reference."
+            ],
+            notes: [
+                "Some scholarships have grade minimums—confirm your standing before submitting.",
+                "Ask for the release schedule or next update date."
             ]
         },
 
@@ -275,10 +342,10 @@ window.HUB_DATA = {
         {
             id: "id-lost",
             title: "Student ID Replacement / Lost ID",
-            officeId: "osas",
-            category: "Student Services",
+            officeId: "mis",
+            category: "Lost ID",
             keywords: ["id", "lost id", "replacement", "student id"],
-            fees: "Varies (confirm at OSAS/Cashier)",
+            fees: "150 pesos",
             eta: "Same day–7 working days (depends on printing)",
             requirements: [
                 "Affidavit of Loss (if required)",
@@ -287,14 +354,14 @@ window.HUB_DATA = {
                 "2x2 photo (if required)"
             ],
             steps: [
-                "Go to OSAS and ask for the ID replacement process.",
-                "Prepare required documents (Affidavit of Loss, photo, etc.).",
-                "If there is a fee: pay at Cashier and keep the receipt.",
+                "Go to MIS near the clinic and ask for the ID replacement process.",
+                "Prepare required documents (Affidavit of Loss).",
+                "Pay 150 pesos at Cashier and keep the receipt.",
                 "Submit all requirements to OSAS for processing.",
                 "Claim the ID on the scheduled date."
             ],
             notes: [
-                "Requirements vary by campus—confirm exact list at OSAS."
+                "Please make sure to wait and find sir Sam Lagoyo."
             ]
         },
 
