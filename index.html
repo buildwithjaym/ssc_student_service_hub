@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="assets/logo.jpg" />
+  <title>BASC Student Services Hub</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="assets/logo.jpg" alt="BASC Logo" />
+      <div class="brand-text">
+        <div class="brand-title">BASC Student Services Hub</div>
+        <div class="brand-subtitle">Your guide to BASC services, steps, and requirements</div>
+      </div>
+    </div>
+
+    <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+  </header>
+
+  <!-- DRAWER MENU -->
+  <nav id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <div class="drawer-title">Menu</div>
+        <button id="closeBtn" class="icon-btn" aria-label="Close menu">✕</button>
+      </div>
+
+      <a class="navlink active" href="#home" data-route="home">Home</a>
+      <a class="navlink" href="#services" data-route="services">Services</a>
+      <a class="navlink" href="#offices" data-route="offices">Offices</a>
+      <a class="navlink" href="#templates" data-route="templates">Templates</a>
+      <a class="navlink" href="#about" data-route="about">About</a>
+
+      <!-- SOCIAL (INSIDE MENU, BELOW ABOUT) -->
+      <div class="menu-social" aria-label="Social links">
+        <div class="menu-social-title">Connect with us:</div>
+
+        <div class="menu-social-row">
+          <a class="msicon fb" href="https://www.facebook.com/BascSSC" target="_blank" rel="noopener"
+             title="Facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M14 8.8V7.2c0-.9.6-1.2 1.1-1.2H16V3h-1.7C12.1 3 11 4.4 11 6.9v1.9H9v3h2V21h3v-9.2h2.2l.6-3H14Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+         
+
+          <a class="msicon gh" href="https://github.com/buildwithjaym" target="_blank" rel="noopener"
+             title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M12 2.5A9.5 9.5 0 0 0 2.5 12c0 4.1 2.6 7.6 6.2 8.8.5.1.7-.2.7-.5v-1.7c-2.5.5-3-.9-3-.9-.4-1.1-1-1.4-1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.7-1.3-2-.2-4.1-1-4.1-4.5 0-1 .4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.8 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.6 1 2.6 0 3.5-2.1 4.3-4.1 4.5.4.3.8 1 .8 2v3c0 .3.2.6.7.5A9.5 9.5 0 0 0 21.5 12 9.5 9.5 0 0 0 12 2.5Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="menu-social-hint">Icons open in browser</div>
+      </div>
+      <!-- /SOCIAL -->
+
+      <div class="drawer-foot">
+        <div class="badge">Green • Yellow • White</div>
+        <div class="tiny">Works offline • Runs on any browser</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container">
+    <!-- HOME -->
+    <section id="homeView" class="view">
+      <div class="hero">
+        <h1>Find what you need!</h1>
+        <p>Search a request. Get the steps, requirements, and office.</p>
+
+
+        <div class="searchbar">
+          <input id="searchInput" type="text" placeholder="Search services or offices..." autocomplete="off" />
+          <button id="clearSearch" class="btn ghost" type="button">Clear</button>
+        </div>
+
+        <div class="quick-grid" id="quickGrid"></div>
+      </div>
+
+      <div class="section-head">
+        <h2>Top Results</h2>
+        <p class="muted">Matches update as you type.</p>
+      </div>
+
+      <div id="results" class="card-grid"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicesView" class="view hidden">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p class="muted">Student transaction guides and processes.</p>
+      </div>
+      <div id="servicesList" class="card-grid"></div>
+    </section>
+
+    <!-- OFFICES -->
+    <section id="officesView" class="view hidden">
+      <div class="section-head">
+        <h2>Offices</h2>
+        <p class="muted">Where to go and who to contact.</p>
+      </div>
+      <div id="officesList" class="card-grid"></div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section id="templatesView" class="view hidden">
+      <div class="section-head">
+        <h2>Templates</h2>
+        <p class="muted">Copy-ready templates and reminders.</p>
+      </div>
+      <div id="templatesList" class="card-grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="aboutView" class="view hidden">
+      <div class="section-head">
+        <h2>About</h2>
+        <p class="muted" id="aboutSubtitle">Served by SSC Officers • SY 2026–2027</p>
+      </div>
+
+      <div class="panel">
+        <h3 id="systemName">BASC Student Services Hub</h3>
+        <p class="muted" id="systemGoal"></p>
+
+        <h3>Mission</h3>
+        <p class="muted" id="systemMission"></p>
+
+        <h3>Vision</h3>
+        <p class="muted" id="systemVision"></p>
+
+        <h3>How to use</h3>
+        <ul>
+          <li>Use the search bar to find a service (TOR, Portal, INC, Transfer, Passbook, etc.).</li>
+          <li>Open a service to view requirements + step-by-step process.</li>
+          <li>Use Templates to copy and print request formats and reminders.</li>
+          <li>Check the About section for current SSC officers and contact information.</li>
+        </ul>
+
+        <h3>SSC Officers (SY <span id="sy">2026–2027</span>)</h3>
+
+        <div class="panel" style="box-shadow:none; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;">
+          <h3 style="margin:0 0 6px;" id="partylistName">Student’s Union Partylist</h3>
+          <p class="muted" style="margin:0;">Current lineup for student leadership.</p>
+        </div>
+
+        <h3>Executive Officers</h3>
+        <div id="execList" class="card-grid"></div>
+
+        <h3>Senators</h3>
+        <div id="senatorsList" class="card-grid"></div>
+
+        <h3>Representatives</h3>
+        <div id="repsList" class="card-grid"></div>
+
+        <h3>Credits</h3>
+        <p class="muted" id="creditsLine"></p>
+
+        <h3>Disclaimer</h3>
+        <p class="muted">
+          Information may change per campus policy. This hub is a guide—please verify final requirements, steps, and fees with the concerned office.
+        </p>
+      </div>
+    </section>
+
+    <!-- DETAIL -->
+    <section id="detailView" class="view hidden">
+      <button id="backBtn" class="btn ghost" type="button">← Back</button>
+      <div id="detailBody" class="panel"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> BASC Student Services Hub<br> • Made by Jaymar</div>
+  </footer>
+
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
