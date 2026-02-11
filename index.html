@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" href="assets/logo.jpg" />
   <title>BASC Student Services Hub</title>
-  <link rel="stylesheet" href="app.css?v=3.3333" />
+  <link rel="stylesheet" href="app.css?v=basscas" />
 </head>
 
 <body>
+  <!-- TOP BAR -->
   <header class="topbar">
     <div class="brand">
       <img class="logo" src="assets/logo.jpg" alt="BASC Logo" />
@@ -21,6 +22,7 @@
     <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
   </header>
 
+  <!-- MENU DRAWER -->
   <nav id="drawer" class="drawer" aria-hidden="true">
     <div class="drawer-inner">
       <div class="drawer-head">
@@ -34,15 +36,17 @@
       <a class="navlink" href="#templates" data-route="templates">Templates</a>
       <a class="navlink" href="#about" data-route="about">About</a>
 
+      <!-- SURVEY CTA (MENU) -->
       <a class="navlink navlink-survey"
          href="https://forms.gle/P2RpEqnSgt345ADi8"
          target="_blank" rel="noopener">
-        Student Survey (Help us improve)
+        📝 Student Survey (Help us improve)
       </a>
       <div class="muted" style="margin:6px 12px 12px; font-size:12px;">
-        Takes about 60 seconds. Your feedback helps improve BASC service guides.
+        Takes about <b>60 seconds</b>. Your feedback helps improve BASC service guides.
       </div>
 
+      <!-- SOCIAL -->
       <div class="menu-social" aria-label="Social links">
         <div class="menu-social-title">Connect with us:</div>
 
@@ -72,7 +76,9 @@
     </div>
   </nav>
 
+  <!-- MAIN -->
   <main class="container">
+    <!-- HOME -->
     <section id="homeView" class="view">
       <div class="hero">
         <h1>Find what you need.</h1>
@@ -94,6 +100,7 @@
       <div id="results" class="card-grid"></div>
     </section>
 
+    <!-- SERVICES -->
     <section id="servicesView" class="view hidden">
       <div class="section-head">
         <h2>Services</h2>
@@ -102,6 +109,7 @@
       <div id="servicesList" class="card-grid"></div>
     </section>
 
+    <!-- OFFICES -->
     <section id="officesView" class="view hidden">
       <div class="section-head">
         <h2>Offices</h2>
@@ -110,6 +118,7 @@
       <div id="officesList" class="card-grid"></div>
     </section>
 
+    <!-- TEMPLATES -->
     <section id="templatesView" class="view hidden">
       <div class="section-head">
         <h2>Templates</h2>
@@ -118,6 +127,7 @@
       <div id="templatesList" class="card-grid"></div>
     </section>
 
+    <!-- ABOUT -->
     <section id="aboutView" class="view hidden">
       <div class="section-head">
         <h2>About</h2>
@@ -143,11 +153,15 @@
         </ul>
 
         <h3>SSC Officers (SY <span id="sy">2026–2027</span>)</h3>
+        
 
         <div class="panel" style="box-shadow:none; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;">
           <h3 style="margin:0 0 6px;" id="partylistName">Student’s Union Partylist</h3>
           <p class="muted" style="margin:0;">Current lineup for student leadership.</p>
         </div>
+
+        <h3>Adviser</h3>
+        <div id="advList" class="card-grid"></div>
 
         <h3>Executive Officers</h3>
         <div id="execList" class="card-grid"></div>
@@ -168,6 +182,7 @@
       </div>
     </section>
 
+    <!-- DETAIL -->
     <section id="detailView" class="view hidden">
       <button id="backBtn" class="btn ghost" type="button">← Back</button>
       <div id="detailBody" class="panel"></div>
@@ -178,11 +193,12 @@
     <div>© <span id="year"></span> BASC Student Services Hub<br> • Made by Jaymar</div>
   </footer>
 
+  <!-- SURVEY PROMPT (ONLY ONCE, AFTER 20s) -->
   <script>
     (function () {
       const SURVEY_URL = "https://forms.gle/P2RpEqnSgt345ADi8";
       const KEY = "basc_survey_prompt_v1";
-      const DELAY_MS = 10000;
+      const DELAY_MS = 10000; // ✅ 10 seconds
 
       function shouldPrompt() {
         try { return !localStorage.getItem(KEY); } catch { return true; }
@@ -196,15 +212,20 @@
         if (!shouldPrompt()) return;
 
         setTimeout(() => {
-          const ok = window.confirm("Can we ask for 60 seconds of your time to answer a short survey and help us improve the BASC Student Services Hub?");
+          // mark first so it won't show repeatedly if they refresh
           markPrompted();
+
+          const ok = window.confirm(
+            "Hi! Can we ask for 60 seconds of your time?\n\nAnswer a short survey to help us improve the BASC Student Services Hub."
+          );
+
           if (ok) window.open(SURVEY_URL, "_blank", "noopener");
         }, DELAY_MS);
       });
     })();
   </script>
 
-  <script src="data.js?v=3.232ewe3"></script>
-  <script src="app.js?v=3.233we23"></script>
+  <script src="data.js?v=3.3ssdsdads"></script>
+  <script src="app.js?v=3.asdsas"></script>
 </body>
 </html>
