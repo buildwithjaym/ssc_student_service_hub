@@ -28,7 +28,7 @@ window.HUB_DATA = {
         adviser: {
             name: "Sherfa A. Salain",
             unit: "SSC",
-            img: "assets/logo.jpg"
+            img: "assets/officers/adviser.jpg"
         },
 
         president: {
