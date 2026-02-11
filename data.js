@@ -24,32 +24,52 @@ window.HUB_DATA = {
     ],
     officers: {
         partylist: "Students' Union Partylist",
-        president: { name: "Owen Mac A. Salain", unit: "CHUSOCOM" },
-        vicePresident: { name: "John Paul Labastilla", unit: "CTE" },
+
+        adviser: {
+            name: "Sherfa A. Salain",
+            unit: "SSC",
+            img: "assets/logo.jpg"
+        },
+
+        president: {
+            name: "Owen Mac A. Salain",
+            unit: "CHUSOCOM",
+            img: "assets/officers/pres.jpg"
+        },
+
+        vicePresident: {
+            name: "John Paul Labastilla",
+            unit: "CTE",
+            img: "assets/officers/vpres.jpg"
+        },
+
         senators: [
-            { name: "Moh. Ershad Sahiron", unit: "CAH" },
-            { name: "Zarqawey A. Salim", unit: "CHUSOCOM" },
-            { name: "Jaymie Suzainne A. Ramillano", unit: "CAH" },
-            { name: "Nicole Shane P. Oriño", unit: "CTE" },
-            { name: "Julman Salasain", unit: "CHUSOCOM" },
-            { name: "Jaymar H. Maruji", unit: "CICTT" },
-            { name: "Nursaira S. Abdo", unit: "CTE" },
-            { name: "Jayvie M. Eugenio", unit: "CCJE" },
-            { name: "James Ryan H. Reyes", unit: "CPAdm" },
-            { name: "Beverly Jane Francisco", unit: "IHTM" },
-            { name: "Nhawaf S. Jingkatal", unit: "CHUSOCOM" }
+            { name: "Moh. Ershad Sahiron", unit: "CAH", img: "assets/officers/shad.jpg" },
+            { name: "Zarqawey A. Salim", unit: "CHUSOCOM", img: "assets/officers/zar.jpg" },
+            { name: "Jaymie Suzainne A. Ramillano", unit: "CAH", img: "assets/officers/jaymie.jpg" },
+            { name: "Nicole Shane P. Oriño", unit: "CTE", img: "assets/officers/nicole.jpg" },
+            { name: "Julman Salasain", unit: "CHUSOCOM", img: "assets/officers/jhul.jpg" },
+            { name: "Jaymar H. Maruji", unit: "CICTT", img: "assets/officers/jay.jpg" },
+            { name: "Nursaira S. Abdo", unit: "CTE", img: "assets/officers/shai.jpg" },
+            { name: "Jayvie M. Eugenio", unit: "CCJE", img: "assets/officers/crim.jpg" },
+            { name: "James Ryan H. Reyes", unit: "CPAdm", img: "assets/officers/logo.jpg" },
+            { name: "Beverly Jane Francisco", unit: "IHTM", img: "assets/officers/bev.jpg" },
+            { name: "Nhawaf S. Jingkatal", unit: "CHUSOCOM", img: "assets/officers/nhawaf.jpg" }
         ],
+
         representatives: [
-            { unit: "CTE", name: "Alyanna Hamsirani" },
-            { unit: "CAH", name: "Alfhariz Arawangsa" },
-            { unit: "CICTT", name: "Amir Naiff Julsali" },
-            { unit: "CHUSOCOM", name: "Ahmad Jayveen Abubakar" },
-            { unit: "CPAdm", name: "Sarha" },
-            { unit: "CITY OSC", name: "Yan Nelle E. Singson" },
-            { unit: "LAMITAN OSC", name: "Al-rafie M. Majid" },
-            { unit: "TIPO-TIPO OSC", name: "Adzra H. Aknalin" },
-            { unit: "STA CLARA OSC", name: "Gerry A. Jannatil" }
+            { unit: "CTE", name: "Alyanna Hamsirani", img: "assets/officers/cte_rep.jpg" },
+            { unit: "CAH", name: "Alfhariz Arawangsa", img: "assets/officers/cah_rep.jpg" },
+            { unit: "CICTT", name: "Amir Naiff Julsali", img: "assets/officers/amir.jpg" },
+            { unit: "CHUSOCOM", name: "Ahmad Jayveen Abubakar", img: "assets/officers/logo.jpg" },
+            { unit: "CPAdm", name: "Sarha", img: "assets/officers/logo.jpg" },
+            { unit: "CITY OSC", name: "Yan Nelle E. Singson", img: "assets/officers/yan.jpg" },
+            { unit: "LAMITAN OSC", name: "Al-rafie M. Majid", img: "assets/officers/alrafie.jpg" },
+            { unit: "TIPO-TIPO OSC", name: "Adzra H. Aknalin", img: "assets/officers/adzra.jpg" },
+            { unit: "STA CLARA OSC", name: "Gerry A. Jannatil", img: "assets/officers/clara_rep.jpg" }
         ]
+
+
     },
 
     offices: [
@@ -59,23 +79,40 @@ window.HUB_DATA = {
             location: "Same building with the Clinic",
             hours: "Mon–Fri, 8:00 AM–5:00 PM ",
             contact: "Facebook: Basilan State College ICT Unit",
-            keywords: ["portal", "account", "mis", "student portal", "login", "reset password", "open portal"]
+            keywords: ["portal", "account", "mis", "student portal", "login", "reset password", "open portal"],
+            img: "assets/basc_logo.jpg"
+
         },
+        {
+            id: "assessment",
+            name: "Assessment",
+            location: "Besides registrar",
+            hours: "Mon–Fri, 8:00 AM–5:00 PM ",
+            contact: "Facebook: Basilan State College ICT Unit",
+            keywords: ["COE", "Certificate", "Ceritificate of Enrollment"],
+            img: "assets/basc_logo.jpg"
+
+        },
+
         {
             id: "registrar",
             name: "Registrar",
-            location: "Main Building — (edit exact location)",
+            location: "Near Amphitheatre",
             hours: "Mon–Fri, 8:00 AM–5:00 PM (edit if needed)",
             contact: "Email/FB/Phone (optional)",
-            keywords: ["tor", "records", "transfer", "coe", "certificate of enrollment", "credentials"]
+            keywords: ["tor", "records", "transfer", "credentials"],
+            img: "assets/basc_logo.jpg"
         },
+
+
         {
             id: "osas",
             name: "Student Affairs / OSAS",
             location: "Administration Building — (edit exact location)",
             hours: "Mon–Fri, 8:00 AM–5:00 PM (edit if needed)",
             contact: "",
-            keywords: ["shifting", "shiftee", "student services", "id", "student org", "activities"]
+            keywords: ["shifting", "shiftee", "student services", "id", "student org", "activities"],
+            img: "assets/basc_logo.jpg"
         },
         {
             id: "cashier",
@@ -83,7 +120,8 @@ window.HUB_DATA = {
             location: "Administration Building — (edit exact location)",
             hours: "Mon–Fri, 8:00 AM–5:00 PM (edit if needed)",
             contact: "",
-            keywords: ["payment", "fees", "receipt", "passbook", "lost passbook", "request passbook"]
+            keywords: ["payment", "fees", "receipt", "passbook", "lost passbook", "request passbook"],
+            img: "assets/basc_logo.jpg"
         },
         {
             id: "testing",
@@ -91,7 +129,8 @@ window.HUB_DATA = {
             location: "Testing Center — (edit exact location)",
             hours: "Mon–Fri, 8:00 AM–5:00 PM (edit if needed)",
             contact: "",
-            keywords: ["exam", "testing", "assessment"]
+            keywords: ["exam", "testing", "assessment"],
+            img: "assets/basc_logo.jpg"
         },
         {
             id: "library",
@@ -99,7 +138,8 @@ window.HUB_DATA = {
             location: "Library Building — (edit exact location)",
             hours: "Mon–Fri, (edit exact hours)",
             contact: "",
-            keywords: ["library", "clearance", "borrow", "research"]
+            keywords: ["library", "clearance", "borrow", "research"],
+            img: "assets/basc_logo.jpg"
         },
         {
             id: "scholarship",
@@ -107,7 +147,8 @@ window.HUB_DATA = {
             location: "Near the Assessment Office",
             hours: "Mon–Fri, 8:00 AM–5:00 PM",
             contact: "",
-            keywords: ["scholarship", "financial aid", "grant", "funding"]
+            keywords: ["scholarship", "financial aid", "grant", "funding"],
+            img: "assets/basc_logo.jpg"
         },
         {
             id: "admin",
@@ -115,7 +156,8 @@ window.HUB_DATA = {
             location: "Admin Building — Main Campus besides SSC office ",
             hours: "Mon–Fri, 8:00 AM–5:00 PM",
             contact: "",
-            keywords: ["mis", "osas", "cashier", "admin", "offices"]
+            keywords: ["mis", "osas", "cashier", "admin", "offices"],
+            img: "assets/basc_logo.jpg"
         }
     ],
 
@@ -145,6 +187,33 @@ window.HUB_DATA = {
             notes: [
                 "Bring your student number and correct spelling of your name to avoid issues.",
                 "If the portal requires an official link, ask MIS to write it down for you."
+            ]
+        },
+
+        //Assessment Office
+        {
+            id: "assessment",
+            title: "Request of COE",
+            officeId: "assessment",
+            category: "COE",
+            keywords: ["certificate of enrollment", "coe", "assessment"],
+            fees: "30 pesos",
+            eta: "Same Day",
+            requirements: [
+                "Request form and get it from registrar",
+                "Full name and course/year/section",
+
+            ],
+            steps: [
+                "Go to the registrar first.",
+                "Provide your student number and complete details.",
+                "Pay for the fees in  the cashier.",
+                "Go to the assessment: let is sign and seal.",
+                "Then, after that you are finished."
+            ],
+            notes: [
+                "Bring your student number and correct spelling of your name to avoid issues.",
+                "Just be calm in waiting if the queues are long."
             ]
         },
 
