@@ -49,19 +49,31 @@ function closeDrawer() {
 
 function officeById(id) { return data.offices.find(o => o.id === id); }
 
-function card({ title, subtitle, tags, onClick }) {
+function card({ title, subtitle, tags, img, onClick }) {
     const el = document.createElement("div");
     el.className = "card";
     el.tabIndex = 0;
+
+    const avatar = img
+        ? `<img class="card-avatar" src="${escapeHtml(img)}" alt="${escapeHtml(title)}" loading="lazy" />`
+        : `<div class="card-avatar fallback" aria-hidden="true"></div>`;
+
     el.innerHTML = `
-    <h3>${escapeHtml(title)}</h3>
-    <div class="muted">${escapeHtml(subtitle || "")}</div>
-    ${tags && tags.length ? `<div class="tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
+    <div class="card-row">
+      ${avatar}
+      <div class="card-meta">
+        <h3>${escapeHtml(title)}</h3>
+        <div class="muted">${escapeHtml(subtitle || "")}</div>
+        ${tags && tags.length ? `<div class="tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
+      </div>
+    </div>
   `;
+
     el.addEventListener("click", onClick);
     el.addEventListener("keydown", (e) => { if (e.key === "Enter") onClick(); });
     return el;
 }
+
 
 function escapeHtml(str) {
     return String(str)
@@ -71,7 +83,6 @@ function escapeHtml(str) {
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
 }
-
 function renderAbout() {
     const meta = data.meta || {};
     const officers = data.officers || {};
@@ -81,6 +92,7 @@ function renderAbout() {
     const systemGoal = $("#systemGoal");
     const systemMission = $("#systemMission");
     const systemVision = $("#systemVision");
+
     const sy = $("#sy");
     const credits = $("#creditsLine");
     const partyName = $("#partylistName");
@@ -90,14 +102,30 @@ function renderAbout() {
     if (systemGoal) systemGoal.textContent = meta.goal || "";
     if (systemMission) systemMission.textContent = meta.mission || "";
     if (systemVision) systemVision.textContent = meta.vision || "";
+
     if (sy) sy.textContent = meta.schoolYear || "";
     if (credits) credits.textContent = `Served by ${meta.servedBy || "SSC"} • Developed by ${meta.developedBy || ""}`;
     if (partyName) partyName.textContent = officers.partylist || "Student’s Union Partylist";
 
+    const advBox = $("#advList");
     const execBox = $("#execList");
     const senatorsBox = $("#senatorsList");
     const repsBox = $("#repsList");
 
+
+    if (advBox) {
+        advBox.innerHTML = "";
+
+        if (officers.adviser?.name) {
+            advBox.appendChild(card({
+                title: officers.adviser.name,
+                subtitle: `Adviser • ${officers.adviser.unit || ""}`.trim(),
+                tags: ["Adviser"],
+                img: officers.adviser.img || "",   // ✅ HERE
+                onClick: () => { }
+            }));
+        }
+    }
     if (execBox) {
         execBox.innerHTML = "";
 
@@ -106,6 +134,7 @@ function renderAbout() {
                 title: officers.president.name,
                 subtitle: `President • ${officers.president.unit || ""}`.trim(),
                 tags: ["Executive"],
+                img: officers.president.img || "",   // ✅ HERE
                 onClick: () => { }
             }));
         }
@@ -115,6 +144,7 @@ function renderAbout() {
                 title: officers.vicePresident.name,
                 subtitle: `Vice President • ${officers.vicePresident.unit || ""}`.trim(),
                 tags: ["Executive"],
+                img: officers.vicePresident.img || "", // ✅ HERE
                 onClick: () => { }
             }));
         }
@@ -127,6 +157,7 @@ function renderAbout() {
                 title: `${i + 1}. ${s.name}`,
                 subtitle: `Senator • ${s.unit || ""}`.trim(),
                 tags: ["Senate"],
+                img: s.img || "",                    // ✅ HERE
                 onClick: () => { }
             }));
         });
@@ -139,12 +170,12 @@ function renderAbout() {
                 title: r.name,
                 subtitle: `Representative • ${r.unit || ""}`.trim(),
                 tags: ["Representative"],
+                img: r.img || "",                    // ✅ HERE
                 onClick: () => { }
             }));
         });
     }
 }
-
 function renderQuick() {
     const grid = $("#quickGrid");
     grid.innerHTML = "";
@@ -186,6 +217,7 @@ function renderOffices() {
             title: o.name,
             subtitle: `${o.location} • ${o.hours}`,
             tags: ["Office"],
+            img: o.img || "",
             onClick: () => openOfficeDetail(o.id)
         }));
     });
