@@ -61,7 +61,7 @@ window.HUB_DATA = {
             { unit: "CTE", name: "Alyanna Hamsirani", img: "assets/officers/cte_rep.jpg" },
             { unit: "CAH", name: "Alfhariz Arawangsa", img: "assets/officers/cah_rep.jpg" },
             { unit: "CICTT", name: "Amir Naiff Julsali", img: "assets/officers/amir.jpg" },
-            { unit: "CHUSOCOM", name: "Ahmad Jayveen Abubakar", img: "assets/officers/logo.jpg" },
+            { unit: "CHUSOCOM", name: "Ahmad Jayveen Abubakar", img: "assets/officers/jayvin.jpg" },
             { unit: "CPAdm", name: "Sarha", img: "assets/officers/logo.jpg" },
             { unit: "CITY OSC", name: "Yan Nelle E. Singson", img: "assets/officers/yan.jpg" },
             { unit: "LAMITAN OSC", name: "Al-rafie M. Majid", img: "assets/officers/alrafie.jpg" },
@@ -221,7 +221,7 @@ window.HUB_DATA = {
         {
             id: "scholarship-apply",
             title: "Apply for Scholarship (New Applicant)",
-            officeId: "scholarships",
+            officeId: "scholarship",
             category: "Scholarships",
             keywords: ["scholarship", "apply scholarship", "financial assistance", "grant", "apply", "requirements"],
             fees: "None (usually)",
@@ -250,7 +250,7 @@ window.HUB_DATA = {
         {
             id: "scholarship-renew",
             title: "Scholarship Renewal (Continuing Scholar)",
-            officeId: "scholarships",
+            officeId: "scholarship",
             category: "Scholarships",
             keywords: ["scholarship renewal", "renew scholarship", "continuing scholar", "renew", "grades", "compliance"],
             fees: "None (usually)",
