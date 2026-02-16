@@ -355,7 +355,7 @@ body {
     color: var(--muted);
 }
 
-/* ====== NEW: Social icons inside MENU (below About) ====== */
+/* Social icons inside MENU */
 .menu-social {
     margin-top: 14px;
     padding: 12px;
@@ -415,7 +415,7 @@ body {
     color: var(--muted);
 }
 
-
+#aboutView #advList .card,
 #aboutView #execList .card,
 #aboutView #senatorsList .card,
 #aboutView #repsList .card {
